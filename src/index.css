@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@layer utilities {
+  .text-fluid-xl { font-size: clamp(0.875rem, 4vw, 1.25rem); }
+  .text-fluid-2xl { font-size: clamp(1rem, 5vw, 1.5rem); }
+  .text-fluid-3xl { font-size: clamp(1.125rem, 6vw, 1.875rem); }
+  .text-fluid-4xl { font-size: clamp(1.25rem, 7vw, 2.25rem); }
+  .text-fluid-5xl { font-size: clamp(1.5rem, 9vw, 3rem); }
+  .text-fluid-7xl { font-size: clamp(2rem, 11vw, 4.5rem); }
+}
+
+@media (max-height: 640px) {
+  .compact-py { padding-top: 0.375rem !important; padding-bottom: 0.375rem !important; }
+}
