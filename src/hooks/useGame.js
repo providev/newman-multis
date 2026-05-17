@@ -111,6 +111,8 @@ export function useGame(config) {
       setState(prev => {
         if (prev.phase !== 'playing') return prev
 
+        const newTotalTime = prev.totalTime + 1
+
         if (countdownSecs) {
           const t = prev.timeLeft - 1
           if (t <= 0) {
@@ -141,16 +143,13 @@ export function useGame(config) {
               feedbackType: 'incorrect',
               feedbackAnswer: q?.answer ?? -1,
               timeLeft: 0,
+              totalTime: newTotalTime,
             }
           }
-          return { ...prev, timeLeft: t }
+          return { ...prev, timeLeft: t, totalTime: newTotalTime }
         }
 
-        if (timeLimit) {
-          return { ...prev, totalTime: prev.totalTime + 1 }
-        }
-
-        return prev
+        return { ...prev, totalTime: newTotalTime }
       })
     }, 1000)
 
