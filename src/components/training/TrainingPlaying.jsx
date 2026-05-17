@@ -49,9 +49,9 @@ export default function TrainingPlaying({ state, config, handleAnswer, onFinish,
           <button onClick={onBack} className="bg-white/20 p-1.5 rounded-lg active:bg-white/30 transition-colors">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
           </button>
-          <span className="bg-indigo-800 px-2 sm:px-3 py-0.5 sm:py-1 rounded-lg font-bold text-sm sm:text-lg">{currentIndex + 1}/{config.numQuestions}</span>
+          <span className="bg-indigo-800 px-2 sm:px-3 py-0.5 sm:py-1 rounded-lg font-bold text-[14px] sm:text-[18px]">{currentIndex + 1}/{config.numQuestions}</span>
         </div>
-        <div className="flex items-center gap-2 sm:gap-4 font-bold text-sm sm:text-lg">
+        <div className="flex items-center gap-2 sm:gap-4 font-bold text-[14px] sm:text-[18px]">
           <div className="flex items-center gap-1 text-yellow-300">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
             {score}
@@ -73,7 +73,7 @@ export default function TrainingPlaying({ state, config, handleAnswer, onFinish,
             ) : (
               <div className="bg-red-500 text-white rounded-2xl sm:rounded-3xl py-5 sm:py-8 px-6 sm:px-10 shadow-2xl flex flex-col items-center animate-pulse-short">
                 <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" className="w-10 h-10 sm:w-12 sm:h-12"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-                <span className="text-fluid-xl sm:text-2xl font-black text-center mt-2">¡Era {feedbackAnswer}!</span>
+                <span className="text-[clamp(14px,4vw,20px)] sm:text-[24px] font-black text-center mt-2">¡Era {feedbackAnswer}!</span>
               </div>
             )}
           </div>
@@ -81,15 +81,15 @@ export default function TrainingPlaying({ state, config, handleAnswer, onFinish,
 
         {q && (
           <>
-            <div className="text-slate-400 font-bold text-xs sm:text-xl mb-1 sm:mb-4">Tabla del {q.table}</div>
-            <div className="text-fluid-5xl sm:text-7xl font-black text-indigo-700 tracking-wider">{q.table} × {q.multiplier}</div>
+            <div className="text-slate-400 font-bold text-[12px] sm:text-[20px] mb-1 sm:mb-4">Tabla del {q.table}</div>
+            <div className="text-[clamp(24px,9vw,48px)] sm:text-[72px] font-black text-indigo-700 tracking-wider">{q.table} × {q.multiplier}</div>
           </>
         )}
 
         {config.timeMode === 'countdown' && <ProgressBar current={timeLeft} max={config.countdownSecs} />}
 
         {config.gameMode === 'input' && (
-          <div className="mt-1 sm:mt-4 bg-white border-2 sm:border-4 border-indigo-200 rounded-xl sm:rounded-2xl w-28 sm:w-48 h-12 sm:h-20 flex items-center justify-center text-fluid-3xl sm:text-5xl font-bold text-indigo-900 shadow-inner relative">
+          <div className="mt-1 sm:mt-4 bg-white border-2 sm:border-4 border-indigo-200 rounded-xl sm:rounded-2xl w-28 sm:w-48 h-12 sm:h-20 flex items-center justify-center text-[clamp(18px,6vw,30px)] sm:text-[48px] font-bold text-indigo-900 shadow-inner relative">
             {currentInput}<span className="w-0.5 sm:w-1 h-5 sm:h-8 bg-indigo-400 animate-pulse ml-0.5 sm:ml-1" />
           </div>
         )}

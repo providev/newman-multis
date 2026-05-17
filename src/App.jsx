@@ -3,6 +3,7 @@ import { getUsername, setUsername, clearUsername, getSelectedCharacter, saveSele
 import Landing from './components/landing/Landing'
 import TrainingPage from './components/training/TrainingPage'
 import GamePage from './components/game/GamePage'
+import RepasoPage from './components/repaso/RepasoPage'
 
 export default function App() {
   const [screen, setScreen] = useState('landing')
@@ -37,6 +38,9 @@ export default function App() {
       )}
       {screen === 'training' && (
         <TrainingPage onBack={() => setScreen('landing')} />
+      )}
+      {screen === 'repaso' && (
+        <RepasoPage onBack={() => setScreen('landing')} />
       )}
       {screen === 'game' && (
         <GamePage onBack={() => setScreen('landing')} character={character} />

@@ -68,18 +68,29 @@ export default function Landing({ username, character, onUsernameChange, onChara
             )}
           </div>
 
-          <div className="w-full flex gap-3 sm:gap-4">
-            <button onClick={() => handleNavigate('training')}
-              className="flex-1 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-4 sm:p-6 flex flex-col items-center gap-3 active:scale-95 transition-all hover:bg-white/15">
-              <div className="w-14 h-14 sm:w-16 sm:h-16 bg-indigo-500 rounded-2xl flex items-center justify-center text-2xl sm:text-3xl shadow-lg">📚</div>
-              <div className="text-center">
-                <h2 className="text-white font-bold text-sm sm:text-lg">Training</h2>
-                <p className="text-indigo-200 text-xs sm:text-sm mt-0.5">Practica tus tablas</p>
-              </div>
-              <div className="mt-1 bg-indigo-500 text-white text-xs font-bold px-4 py-1.5 rounded-full">Entrar →</div>
-            </button>
+          <div className="w-full flex flex-col gap-3 sm:gap-4">
+            <div className="flex gap-3 sm:gap-4">
+              <button onClick={() => handleNavigate('repaso')}
+                className="flex-1 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-4 sm:p-6 flex flex-col items-center gap-3 active:scale-95 transition-all hover:bg-white/15">
+                <div className="w-14 h-14 sm:w-16 sm:h-16 bg-emerald-500 rounded-2xl flex items-center justify-center text-2xl sm:text-3xl shadow-lg">📖</div>
+                <div className="text-center">
+                  <h2 className="text-white font-bold text-sm sm:text-lg">Repaso</h2>
+                  <p className="text-indigo-200 text-xs sm:text-sm mt-0.5">Estudia las tablas</p>
+                </div>
+                <div className="mt-1 bg-emerald-500 text-white text-xs font-bold px-4 py-1.5 rounded-full">Ver →</div>
+              </button>
+              <button onClick={() => handleNavigate('training')}
+                className="flex-1 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-4 sm:p-6 flex flex-col items-center gap-3 active:scale-95 transition-all hover:bg-white/15">
+                <div className="w-14 h-14 sm:w-16 sm:h-16 bg-indigo-500 rounded-2xl flex items-center justify-center text-2xl sm:text-3xl shadow-lg">📚</div>
+                <div className="text-center">
+                  <h2 className="text-white font-bold text-sm sm:text-lg">Training</h2>
+                  <p className="text-indigo-200 text-xs sm:text-sm mt-0.5">Practica tus tablas</p>
+                </div>
+                <div className="mt-1 bg-indigo-500 text-white text-xs font-bold px-4 py-1.5 rounded-full">Entrar →</div>
+              </button>
+            </div>
             <button onClick={() => handleNavigate('game')}
-              className="flex-1 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-4 sm:p-6 flex flex-col items-center gap-3 active:scale-95 transition-all hover:bg-white/15">
+              className="self-center w-1/2 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-4 sm:p-6 flex flex-col items-center gap-3 active:scale-95 transition-all hover:bg-white/15">
               <div className="w-14 h-14 sm:w-16 sm:h-16 bg-orange-500 rounded-2xl flex items-center justify-center text-2xl sm:text-3xl shadow-lg">🎮</div>
               <div className="text-center">
                 <h2 className="text-white font-bold text-sm sm:text-lg">Game</h2>
